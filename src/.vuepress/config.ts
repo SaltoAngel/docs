@@ -7,6 +7,7 @@ export default defineUserConfig({
   alias: {
     "@Releases": path.resolve(__dirname, "components/Releases.vue"),
   },
+
   dest: "dist",
 
   head: [

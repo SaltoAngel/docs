@@ -21,7 +21,7 @@ export default hopeTheme({
   logo: "/logo.svg",
 
   repo: "https://github.com/erpcya/docs",
-  
+
 
   repoDisplay: false,
 
@@ -65,45 +65,37 @@ export default hopeTheme({
 
     mdEnhance: {
       align: true,
-        attrs: true,
-        chart: true,
-        codetabs: true,
-        container: true,
-        card: true,
-        demo: true,
-        echarts: true,
-        figure: true,
-        flowchart: true,
-        gfm: true,
-        imgLazyload: true,
-        imgSize: true,
-        include: true,
-        katex: true,
-        mark: true,
-        mermaid: true,
-        playground: {
-          presets: ["ts", "vue"],
-        },
-        presentation: ["highlight", "math", "search", "notes", "zoom"],
-        stylize: [
-          {
-            matcher: "Recommended",
-            replacer: ({ tag }) => {
-              if (tag === "em")
-                return {
-                  tag: "Badge",
-                  attrs: { type: "tip" },
-                  content: "Recommended",
-                };
-            },
+      attrs: true,
+      chart: true,
+      codetabs: true,
+      container: true,
+      demo: true,
+      echarts: true,
+      figure: true,
+      flowchart: true,
+      gfm: true,
+      imgLazyload: true,
+      imgSize: true,
+      include: true,
+      stylize: [
+        {
+          matcher: "Recommended",
+          replacer: ({ tag }) => {
+            if (tag === "em")
+              return {
+                tag: "Badge",
+                attrs: { type: "tip" },
+                content: "Recommended",
+              };
           },
-        ],
-        sub: true,
-        sup: true,
-        tabs: true,
-        vPre: true,
-        vuePlayground: true,
-      },
+        },
+      ],
+      sub: true,
+      sup: true,
+      tabs: true,
+      vPre: true,
+    },
+
 
     pwa: {
       favicon: "/favicon.ico",

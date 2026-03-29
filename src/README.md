@@ -1,11 +1,16 @@
 ---
 home: true
-layout: BlogHome
 icon: home
 title: Inicio
+layout: BlogHome
+hero: true
 heroText: false
-bgImage: /background.jpg
 heroFullScreen: false
+bgImage: /background.jpg
+bgImageStyle:
+  background-position: center
+  background-size: cover
+  background-attachment: fixed
 projects:
   - name: Liberación de ADempiere 3.9.4
     desc: La versión 3.9.4 ya está disponible
@@ -19,6 +24,5 @@ projects:
     desc: Estamos en Discord!
     link: https://discord.gg/UWcyn7DEzV
     icon: /assets/img/discord-logo.png
-
 footer: '<a href="https://erpya.com" rel="noopener noreferrer" target="_blank">ERP Consultores y Asociados, C.A.</a> | <a href="/about">Nosotros</a>'
 ---

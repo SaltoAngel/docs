@@ -8,7 +8,7 @@ tag:
   - Actualizaciones
   - Versiones
   - erpya-3.9.4-001-1.3.4
-  - 2024-03-14
+  - "2024-03-14"
 article: false
 ---
 
