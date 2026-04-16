@@ -8,23 +8,28 @@ tag:
   - "Actualizaciones"
   - "Versiones"
   - "erpya-3.9.4-001-3.6.9"
-  - "2025-12-08"
+  - "2026-01-06"
   - "Noticias"
 article: true
 ---
 
-**Fecha de Liberación:** 2025-12-08
+**Fecha de Liberación:** 2026-01-06
 
 ## Novedades
 
-- Facturación Digital
+- **Control de creación automática de tipo de conversión de moneda mediante campo bandera**
 
 ## Contexto
 
-- Se agrega soporte a devolver mensajes de Errores del API
-- Se agrega soporte a Enviar PO a proceso de Impresion Fiscal con la intencion de poder usarlo en la una factura, entrega o cualquier otro documento que sea suceptible a enviar a la imprenta fiscal
-- Se Agrega columna de URL de Documento Fiscal en Documentos Por Cobrar
+| Documento             | Campo Bandera Activado | Conversión Automática     |
+| --------------------- | ---------------------- | ------------------------- |
+| Orden de Venta        | ✅                      | Se genera automáticamente |
+| Orden de Compra       | ✅                      | Se genera automáticamente |
+| Pago / Cobro          | ✅                      | Se genera automáticamente |
+| Caja                  | ✅                      | Se genera automáticamente |
+| Documentos por Cobrar | ✅                      | Se genera automáticamente |
+| Documentos por Pagar  | ✅                      | Se genera automáticamente |
 
 ## Requerimientos
 
-- Se requieren procesos adicionales por aplicar.
+- Se requieren procesos adicionales por aplicar

@@ -8,20 +8,24 @@ tag:
   - "Actualizaciones"
   - "Versiones"
   - "erpya-3.9.4-001-3.6.5"
-  - "2025-11-25"
+  - "2025-12-22"
   - "Noticias"
 article: true
 ---
 
-**Fecha de Liberación:** 2025-11-25
+**Fecha de Liberación:** 2025-12-22
 
 ## Novedades
 
-- Orden de Distribución
+- Lector de Peso Desde Báscula
 
 ## Contexto
 
-- Se mejora el cálculo del peso en la Orden de Distribución: ahora se retorna el peso total de la línea multiplicando el peso del producto por la cantidad ordenada.
+- Se corrige error de NullPointerException al actualizar display de peso desde hilo de fondo
+  - Soluciona error "Cannot invoke addAuResponse because Executions.getCurrent() is null"
+  - Implementa activación de Desktop usando Executions.activate() cuando no hay contexto de ejecución
+  - Permite actualizar la UI correctamente cuando los eventos de balanza llegan desde hilos de fondo
+  - Mantiene compatibilidad con el comportamiento original cuando hay contexto de ejecución disponible
 
 ## Requerimientos
 
