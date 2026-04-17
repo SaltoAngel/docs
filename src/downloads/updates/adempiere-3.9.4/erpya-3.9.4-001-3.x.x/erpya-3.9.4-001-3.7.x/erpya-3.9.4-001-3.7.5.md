@@ -9,7 +9,6 @@ tag:
   - "Versiones"
   - "erpya-3.9.4-001-3.7.5"
   - "2026-01-15"
-  - "Noticias"
 article: true
 ---
 
@@ -17,11 +16,15 @@ article: true
 
 ## Novedades
 
-- **Corrección en proceso de Asignación de Pagos**
+- **Corrección en el proceso de Asignación de Pagos (Payment Allocation)**
 
 ## Contexto
 
-Se corrigió un error en el proceso de **Asignación de Pagos (Payment Allocation)** que afectaba la estabilidad del registro de transacciones financieras. Esta corrección asegura que los cruces de pagos y facturas se procesen correctamente sin interrupciones.
+Actualización de estabilidad financiera para solventar errores detectados durante el cruce de documentos de cobro y pago.
+
+### Mejora Realizada:
+
+Se corrigió un error detectado bajo el issue **#1099** que afectaba la consistencia de los registros contables durante la asignación manual y automática de pagos. Esta mejora asegura que el saldo pendiente de las facturas se actualice correctamente tras la aplicación de cobros, evitando descuadres en los auxiliares de cuentas por cobrar y pagar.
 
 ## Requerimientos
 

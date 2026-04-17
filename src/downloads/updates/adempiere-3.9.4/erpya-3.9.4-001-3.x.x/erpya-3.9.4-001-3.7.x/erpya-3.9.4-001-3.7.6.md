@@ -9,7 +9,6 @@ tag:
   - "Versiones"
   - "erpya-3.9.4-001-3.7.6"
   - "2026-01-15"
-  - "Noticias"
 article: true
 ---
 
@@ -17,14 +16,17 @@ article: true
 
 ## Novedades
 
-- **Ajustes en flujo de eventos para Pesaje y Análisis de Calidad**
+- **Refactorización de eventos de compleción en procesos de pesaje y calidad**
 
 ## Contexto
 
-Se ha reorganizado la ejecución de eventos en procesos críticos para mejorar la integridad de los datos:
-- **Record Weight**: La validación de peso incompleto se movió al evento `Completed`, antes de los validadores del modelo.
-- **Análisis de Calidad**: El evento de creación de la orden de salida se trasladó al estado `Completed` del proceso de Record Weight.
-- **FAP**: El método de creación del peso de acondicionamiento se movió del evento `Before Prepare` al evento `Before Completed`.
+Mejora en la estabilidad y orden de ejecución de procesos críticos de recepción de materia prima.
+
+### Cambios Técnicos:
+
+- **Record Weight**: La validación de peso incompleto se movió al evento final de compleción (`Completed`), asegurando que todos los validadores de modelo se ejecuten con datos finales.
+- **Calidad**: El evento de generación de la orden de salida se trasladó del estado "Prepare" al estado "Completed" del proceso de registro de peso, garantizando que el inventario se mueva solo tras la validación total.
+- **FAP**: El método de creación de peso de acondicionamiento ahora se ejecuta justo antes de la compleción (`Before Completed`) para reflejar los últimos ajustes de análisis.
 
 ## Requerimientos
 

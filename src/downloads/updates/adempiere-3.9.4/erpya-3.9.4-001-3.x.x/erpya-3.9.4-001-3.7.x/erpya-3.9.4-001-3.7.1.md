@@ -9,7 +9,6 @@ tag:
   - "Versiones"
   - "erpya-3.9.4-001-3.7.1"
   - "2026-01-12"
-  - "Noticias"
 article: true
 ---
 
@@ -17,18 +16,16 @@ article: true
 
 ## Novedades
 
-- **Generación automática de tasas de cambio faltantes**
+- **Generación automática de registros de tasas de cambio mediante Model Validator**
 
 ## Contexto
 
-Se incorpora un **Model Validator** que genera automáticamente los registros faltantes en la tabla `C_Conversion_Rate` cuando el flag **`IsRateGenerated`** está activo. El validador detecta saltos de fechas entre tipos de cambio existentes y completa los días faltantes según la configuración del sistema.
+Mejora de automatización para asegurar la disponibilidad de tipos de cambio en transacciones multimoneda.
 
-### Configuración del Sistema:
-- **`ECA13_MODE_RATE_GENERATE`**:
-  - `last`: usa el último tipo de cambio existente.
-  - `next`: usa el nuevo tipo de cambio ingresado.
-- **`ECA13_ITERATION_NUMBER`**: Define el límite máximo de días que pueden generarse automáticamente por operación (evita creaciones masivas accidentales).
+### Funcionamiento:
+
+Se incorporó un Model Validator que completa automáticamente los registros faltantes en la tabla `C_Conversion_Rate` cuando existe un flag de generación activo. Dependiendo de la configuración (`ECA13_MODE_RATE_GENERATE`), el sistema puede usar el último tipo de cambio existente (`last`) o el nuevo ingresado (`next`) para llenar los huecos en el periodo, respetando un límite de iteraciones definido para proteger la performance.
 
 ## Requerimientos
 
-- Es necesario aplicar el script de migración: [020_ECA13_Automate_missing_currency_conversion_rates_generation.xml](https://github.com/erpya/currency-convert-documents/blob/master/xml/migration/020_ECA13_Automate_missing_currency_conversion_rates_generation.xml)
+- Se requieren procesos adicionales por aplicar.

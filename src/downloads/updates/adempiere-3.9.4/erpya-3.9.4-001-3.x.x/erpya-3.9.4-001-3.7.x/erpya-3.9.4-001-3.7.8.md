@@ -9,7 +9,6 @@ tag:
   - "Versiones"
   - "erpya-3.9.4-001-3.7.8"
   - "2026-01-21"
-  - "Noticias"
 article: true
 ---
 
@@ -17,14 +16,17 @@ article: true
 
 ## Novedades
 
-- **Mejoras en Logística, Gestión de Servicios y Asignación de Pagos**
+- **Limpieza de localizador en Outbound Order y separación de servicios en Requisiciones**
 
 ## Contexto
 
-Esta versión incluye mejoras transversales en varios módulos:
-- **Logística**: Soporte para limpiar el localizador de almacén al generar órdenes de salida (Warehouse Outbound Order), permitiendo mayor flexibilidad en la ubicación de inventario.
-- **Compras**: Capacidad de separar productos de tipo servicio al generar Órdenes de Compra (PO) desde Requisiciones para una mejor clasificación.
-- **Finanzas**: Ajuste automático de diferencias en la asignación de pagos cuando se realiza un pago asociado a una factura, optimizando la conciliación.
+Este release introduce flexibilidad en la gestión de almacenes y precisión en el flujo de compras.
+
+### Mejoras Implementadas:
+
+- **Almacén**: Se agregó soporte para limpiar el localizador al generar Órdenes de Salida (Warehouse Outbound Order), permitiendo una reubicación de inventario más ágil.
+- **Compras**: Mejora en el proceso de generación de Órdenes de Compra desde Requisiciones, permitiendo separar y clasificar correctamente los productos de tipo servicio.
+- **Finanzas**: Ajuste en la lógica de asignación para manejar correctamente diferencias menores durante la conciliación de pagos vinculados a facturas.
 
 ## Requerimientos
 
