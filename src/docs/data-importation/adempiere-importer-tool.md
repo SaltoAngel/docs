@@ -181,6 +181,31 @@ Qué hace la herramienta:
 
 Así puedes trabajar **exactamente como iDempiere** cuando en la ventana seleccionas Socio de Negocios, pero el proceso termina insertando en la pestaña de Localización.
 
+## Ejemplo: Importación de Listas de Precios (Múltiples Tablas Anidadas)
+
+La herramienta permite cargar varias tablas jerárquicas en un solo paso gracias al uso de `>` y un sistema de caché inteligente de registros.
+
+Por ejemplo, si necesitas importar la Cabecera de la Lista de Precio (`M_PriceList`), su Versión (`M_PriceList_Version`) y los Precios de los Productos (`M_ProductPrice`):
+
+1. En la **Plantilla de Importación**, selecciona la pestaña "Lista de Precios" para dar el contexto base.
+2. Tu archivo puede estructurarse de la siguiente manera:
+
+### Encabezado de ejemplo (CSV/TSV)
+```csv
+Name,C_Currency_ID[ISO_Code],M_PriceList_Version>Name/K,M_PriceList_Version>M_ProductPrice>M_Product_ID[Value],M_PriceList_Version>M_ProductPrice>PriceList
+```
+
+### Explicación rápida:
+- `Name`, `C_Currency_ID[ISO_Code]`: Estas columnas sin prefijo se procesan en la tabla raíz de la pestaña seleccionada (`M_PriceList`).
+- `M_PriceList_Version>Name/K`: Crea (o actualiza) la Versión y la vincula automáticamente a la cabecera anterior.
+- `M_PriceList_Version>M_ProductPrice>...`: Crea el Precio del Producto vinculándolo **directamente** a la Versión creada en el paso anterior.
+
+**Ventaja de la Caché Automática**: Si tienes 100 productos (100 filas) para la misma lista y versión, la herramienta **no duplicará** las cabeceras. El sistema detecta que los datos principales son idénticos a los de la línea anterior y simplemente **reutiliza los registros** de `M_PriceList` y `M_PriceList_Version`, procesando y creando únicamente los precios en cascada.
+
+### Soporte Flexible de Ventanas y Fechas
+- **Pestaña Opcional/Flexible**: Si la Plantilla de Importación no tiene definida una Pestaña explícitamente, la herramienta intentará auto-detectarla basada en la "Ventana" o el "Nombre de la Plantilla", permitiendo una configuración mucho más relajada.
+- **Conversión Automática de Fechas**: Campos estrictos de base de datos (`java.sql.Timestamp`, como `ValidFrom`) aceptan ahora fechas estándar automáticamente, formateándose y evitando bloqueos técnicos.
+
 ## ¿Cómo se usa en el Sistema?
 
 1.  **Configuración (Plantilla de Importación)**:
