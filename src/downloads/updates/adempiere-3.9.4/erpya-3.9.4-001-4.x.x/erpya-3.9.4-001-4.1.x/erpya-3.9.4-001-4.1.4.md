@@ -4,54 +4,32 @@ icon: podcast
 category: Actualizaciones
 tag:
   - Actualizaciones
-  - erpya-394.001-4.1.4
+  - erpya-3.9.4-001-4.1.4
   - 2026-04-22
 article: true
 ---
 
 # Fecha de Liberación: 2026-04-22
 
-## Novedades
+## ✨ Novedades y Mejoras
+Esta versión trae mejoras significativas para optimizar tus operaciones diarias. Hemos perfeccionado la carga de extractos bancarios Banplus, asegurando una interpretación precisa de tus movimientos sin importar el formato del archivo. Nuestro importador avanzado de datos ahora es más potente y fácil de usar, permitiendo la carga masiva de información compleja con mayor fiabilidad, menor margen de error y reportes de éxito detallados. Además, hemos fortalecido la gestión de cuentas en el programa de asistencia para agricultores, garantizando la integridad de tus datos.
 
-```# 📦 Nota de Liberación ERP-394.001-4.1.2
+### 💳 Gestión de Pagos y Bancos
 
-## 💳  Customizaciones de Pago
+*   **Carga más precisa y confiable de extractos Banplus:** Hemos mejorado la integración de extractos bancarios Banplus para manejar correctamente diferentes formatos, eliminando errores en montos y datos.
+*   **Compatibilidad total con formatos históricos y recientes:** El sistema ahora soporta tanto los formatos "base" de Banplus (CSV, TXT, XLS) como los más recientes, asegurando que tus cargas históricas sigan funcionando y que los nuevos formatos se interpreten de forma óptima. Esto significa que siempre podrás cargar tus movimientos bancarios sin problemas de compatibilidad.
 
-- Se actualizó la integración de **extractos Banplus** para manejar correctamente **variantes de formato** que estaban provocando cargas incompletas y montos mal interpretados. Para evitar afectar a usuarios que ya cargaban con el formato anterior, se hizo lo siguiente:
-1. Se **restauró el formato “base/original”** de Banplus (CSV/TXT/XLS) para que los extractos que históricamente cargaban sigan funcionando igual, sin cambios en su comportamiento.
-2. Se incorporaron **nuevos loaders con sufijoss (custom) para el formato más reciente, manteniendo el ajuste de interpretación de datos (por ejemplo, manejo de montos/decimales y lectura de líneas según el extracto).
+### 🚀 Importador Avanzado de Datos
 
-| Banco | Formato | Loader (clase) |
-|---|---|---|
-| Banplus | CSV (base) | `org.spin.pc.bank.imp.Banplus_CSV_Loader` |
-| Banplus | TXT (base) | `org.spin.pc.bank.imp.Banplus_TXT_Loader` |
-| Banplus | XLS Summary (base) | `org.spin.pc.bank.imp.BanplusSummary_XLS_Loader` |
-| Banplus | XLS Detailed (base) | `org.spin.pc.bank.imp.BanplusDetailed_XLS_Loader` |
+*   **Carga masiva de datos complejos simplificada:** Hemos robustecido el importador para que puedas cargar grandes volúmenes de información con múltiples estructuras relacionadas de manera más sencilla y eficiente, sin necesidad de configuraciones redundantes.
+*   **Mayor fiabilidad en la importación de datos multinivel:** Se han resuelto problemas que podían causar la omisión de registros al importar estructuras complejas (como listas de precios con sus versiones y precios de productos), asegurando que toda la información se cargue correctamente.
+*   **Flexibilidad mejorada en la carga de plantillas:** Si olvidas seleccionar una pestaña en tu plantilla de importación, el sistema ahora puede identificar automáticamente la tabla raíz, agilizando el proceso y reduciendo la necesidad de correcciones manuales.
+*   **Importación de fechas sin complicaciones:** El sistema convierte automáticamente diferentes formatos de fecha a un estándar, eliminando errores y rechazos al cargar información como fechas de validez.
+*   **Reportes de importación claros y detallados:** Al finalizar una carga masiva, recibirás un resumen preciso que te indicará cuántos registros se crearon en cada tabla, brindándote total visibilidad y confirmación del proceso.
 
----
+### 🧑‍🌾 Programa de Asistencia para Agricultor
 
-## Importador Avanzado
+*   **Mayor integridad en la gestión de cuentas:** Hemos mejorado la lógica de asignación de cuentas, validando que siempre se asigne una cuenta válida. Esto evita errores y asegura que la información financiera de los productores se registre correctamente.
 
-Esta versión incluye importantes mejoras de robustez y usabilidad para facilitar la carga de archivos masivos con múltiples estructuras anidadas profundas, eliminando la necesidad de configuraciones redundantes en la plantilla.
-
-### ✨ Nuevas Funcionalidades y Mejoras:
-
-- **Aislamiento de Caché por Tabla (Multi-Anidación)**: Se reescribió el motor de caché en memoria de la sesión limitándolo por "Nivel y Tabla". Esto soluciona problemas de inserciones omitidas al crear estructuras complejas de tablas hermanas de segundo nivel (Ej. cargar Cabecera M_PriceList + Versión M_PriceList_Version + Precios M_ProductPrice desde un mismo documento sin choques).
-
-- **Auto-resolución Flexible de Modelos (Pestañas Opcionales)**: Ahora la Herramienta puede iniciar procesos de importación incluso si el usuario olvidó seleccionar una "Pestaña" (Tab) en la Plantilla de Importación. El sistema resolverá inteligentemente la tabla raíz usando la Primera Pestaña de la Ventana, o haciendo un fallback directo al Nombre de la Plantilla, mientras permite que la sintaxis Tabla>Columna guíe libremente todo el archivo.
-
-- **Tolerancia Activa para Fechas (Timestamps)**: Se implementó una capa de conversión universal en la resolución de valores para campos de base de datos tipo fecha. Ahora, registros como ValidFrom transformarán transparente y automáticamente entradas de utilería o de texto en objetos estandarizados java.sql.Timestamp, evitando bloqueos o rechazos durante el mapeo de los Modelos (PO).
-
-- **Reportes de Resumen Detallados**: El reporte final de éxito ahora despliega un desglose detallado confirmando exactamente en qué tablas trabajó el sistema y cuántos registros reales se crearon en cada una de ellas independientemente (`Ej. Summary: (M_PriceList: 1, M_PriceList_Version: 1, M_ProductPrice: 250)`).
-
----
-
-## Programa de Asistencia para Agricultor
-
-- Corrección en la lógica de asignación de `FM_Account_ID` (CUENTA): ahora se valida que el condicionamiento tenga un acuerdo/cuenta válido (> 0) antes de asignarlo. Esto evita que se establezca el valor 0 al evaluar productores autofinanciados, previniendo errores de clave foránea.
- 
-
-
-## Requerimientos
-
-- No se requieren.
+## ⚙️ Requerimientos Técnicos
+- No se requieren procesos adicionales por aplicar.
