@@ -12,18 +12,20 @@ article: true
 # Fecha de Liberación: 2026-04-24
 
 ## Novedades
-Optimizamos la eficiencia operativa mediante la agilización de procesos bancarios y el fortalecimiento de nuestra herramienta de carga masiva de información.
+Optimizamos la gestión de pagos y la carga masiva de datos para agilizar tus operaciones diarias.
 
 ## Contexto
-Esta actualización se centra en mejorar la experiencia del usuario final, reduciendo los tiempos de procesamiento en tareas recurrentes y garantizando una mayor fluidez en la gestión administrativa diaria dentro de nuestra plataforma.
+En esta actualización, nos enfocamos en reducir los tiempos de espera en tus procesos administrativos y facilitar la gestión de información financiera, permitiéndote concentrarte en lo que realmente importa para tu negocio. 
 
-### 💳 Gestión de Pagos y Bancos
-- Se ha optimizado el proceso de carga de estados de cuenta del banco Banplus, permitiendo una conciliación bancaria mucho más rápida y precisa.
+![Imagen](/assets/img/downloads/updates/resources/erpya-394-001-4-1-5-img-1.png)
 
-![Captura de Interfaz](/assets/img/downloads/updates/resources/erpya-394-001-4-1-5-img-1.png)
 
-### 🚀 Importación Inteligente de Datos
-- Hemos mejorado el motor de carga masiva, facilitando la incorporación de grandes volúmenes de información con estructuras complejas, lo que minimiza errores manuales y ahorra tiempo en la migración de catálogos y registros.
+
+### 💳 Gestión de Pagos
+- Agilizamos el proceso de registro de pagos bancarios, logrando una carga más rápida y eficiente de tus extractos de cuenta del banco Banplus.
+
+### 🚀 Importación de Datos
+- Potenciamos nuestra herramienta de carga masiva, permitiendo procesar información con estructuras más complejas de manera fluida y sin errores.
 
 ## Requerimientos
-- [[REQUERIMIENTOS_AUTOMATICOS]]
+- No se requieren procesos adicionales por aplicar.
