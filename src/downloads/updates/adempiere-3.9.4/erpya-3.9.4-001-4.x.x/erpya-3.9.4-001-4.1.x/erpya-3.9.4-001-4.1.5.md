@@ -12,18 +12,21 @@ article: true
 # Fecha de Liberación: 2026-04-24
 
 ## Novedades
-Optimizamos la eficiencia operativa mediante la agilización de procesos bancarios y el fortalecimiento de nuestra herramienta de carga masiva de información.
+Optimizamos la gestión de pagos y la carga masiva de información para agilizar tu flujo de trabajo diario.
 
 ## Contexto
-Esta actualización se centra en mejorar la experiencia del usuario final, reduciendo los tiempos de procesamiento en tareas recurrentes y garantizando una mayor fluidez en la gestión administrativa diaria dentro de nuestra plataforma.
+En ERP Consultores y Asociados seguimos evolucionando nuestra plataforma para ofrecerte herramientas más rápidas y eficientes. En esta actualización, nos enfocamos en simplificar procesos críticos de conciliación y gestión de datos.
 
-### 💳 Gestión de Pagos y Bancos
-- Se ha optimizado el proceso de carga de estados de cuenta del banco Banplus, permitiendo una conciliación bancaria mucho más rápida y precisa.
+### 💳 Gestión de Pagos y Conciliación
+- Hemos optimizado la velocidad de procesamiento al cargar extractos bancarios de Banplus, permitiéndote conciliar tus cuentas en menos tiempo.
+- 
 
-![Captura de Interfaz](/assets/img/downloads/updates/resources/erpya-394-001-4-1-5-img-1.png)
+![Imagen](src/.vuepress/public/assets/img/downloads/updates/resources/erpya-394-001-4-1-5-img-1.png)
 
-### 🚀 Importación Inteligente de Datos
-- Hemos mejorado el motor de carga masiva, facilitando la incorporación de grandes volúmenes de información con estructuras complejas, lo que minimiza errores manuales y ahorra tiempo en la migración de catálogos y registros.
+
+
+### 📊 Importación de Datos
+- Ahora el sistema cuenta con mayor capacidad y estabilidad al procesar cargas masivas de información con estructuras complejas, evitando errores y ahorrando horas de trabajo administrativo.
 
 ## Requerimientos
-- [[REQUERIMIENTOS_AUTOMATICOS]]
+- No se requieren procesos adicionales por aplicar.
